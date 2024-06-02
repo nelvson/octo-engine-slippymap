@@ -1,0 +1,5 @@
+<example>
+  <bar size="bar_size" type="metal">bars content</bar>
+  <foo size="1789" type="unknown">foos content</foo>
+</example>
+

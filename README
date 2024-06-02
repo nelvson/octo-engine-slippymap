@@ -1,5 +1,5 @@
 ## GOAL
-- from gpx data, get lat&lang
-- convert those lat & lang to Slippy Map format (zoom, x, y)
+- from gpx data, get lat&lang (how to parse xml in zig?)
+- convert those lat & lang to Slippy Map format (zoom, x, y)  
 - fetch images using https://tile.openstreetmap.org/zoom/x/y.png, get map image of positions
 - using ffmpeg, render those images to video?
