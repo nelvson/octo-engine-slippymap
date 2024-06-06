@@ -1,4 +1,5 @@
 const std = @import("std");
+const a = @import("./get_coordinates.zig");
 
 const print = std.debug.print;
 const math = std.math;
@@ -16,7 +17,14 @@ pub fn get_tiles(lat: f64, long: f64, zoom: u5) struct { x_tile: i32, y_tile: i3
     return .{ .x_tile = x_tile, .y_tile = y_tile };
 }
 
-pub fn main() !void {
+pub fn main() void {
+    var gpa = std.heap.GeneralPurposeAllocator(.{}){};
+    const lat_lon_alloc = gpa.allocator();
+
+    var lat_lon = std.ArrayList(a.LatLon).init(lat_lon_alloc);
+    defer lat_lon.deinit();
+
+    a.get_coordinates(&lat_lon);
     // stdout is for the actual output of your application, for example if you
     // are implementing gzip, then only the compressed bytes should be sent to
     // stdout, not any debugging messages.

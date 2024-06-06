@@ -12,7 +12,7 @@ read_dom () {
 parse_dom () {
     if [[ $TAG_NAME = "trkpt" ]] ; then
         eval local $ATTRIBUTES
-        echo "$lat, $lon"
+        echo "$lat,$lon"
     fi
 }
 
